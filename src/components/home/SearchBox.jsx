@@ -104,7 +104,7 @@ const [showSuggestions, setShowSuggestions] = useState(false);
       initial={{ opacity: 0, y: 35 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="relative w-full max-w-4xl"
+      className="relative w-full max-w-4xl px-1 sm:px-0"
     >
       <div
         className={`
@@ -113,8 +113,7 @@ const [showSuggestions, setShowSuggestions] = useState(false);
         items-center
         rounded-full
         border
-        px-3
-        py-3
+        px-2 py-2 sm:px-3 sm:py-3
         backdrop-blur-3xl
         transition-all
         duration-500
@@ -128,7 +127,7 @@ const [showSuggestions, setShowSuggestions] = useState(false);
         }
       `}
       >
-        <span className="px-4 text-xl text-zinc-500">
+        <span className="px-2 text-lg text-zinc-500 sm:px-4 sm:text-xl">
           ⌕
         </span>
 
@@ -169,10 +168,13 @@ const [showSuggestions, setShowSuggestions] = useState(false);
           bg-transparent
           px-2
           py-3
-          text-lg
+          text-base
           text-white
           placeholder:text-zinc-500
           outline-none
+          sm:px-2
+          sm:py-3
+          sm:text-lg
           "
         />
 
@@ -186,12 +188,15 @@ const [showSuggestions, setShowSuggestions] = useState(false);
           relative
           mr-2
           flex
-          h-14
-          w-14
+          h-11
+          w-11
+          text-xl
+          sm:h-14
+          sm:w-14
+          sm:text-2xl
           items-center
           justify-center
           rounded-full
-          text-2xl
           transition-all
           duration-300
 
@@ -213,15 +218,18 @@ const [showSuggestions, setShowSuggestions] = useState(false);
           type="submit"
           className="
           flex
-          h-14
-          w-14
+          h-11
+          w-11
+          text-xl
+          sm:h-14
+          sm:w-14
+          sm:text-2xl
           items-center
           justify-center
           rounded-full
           bg-gradient-to-r
           from-yellow-300
           to-amber-500
-          text-2xl
           text-black
           transition-all
           duration-300
@@ -240,7 +248,7 @@ const [showSuggestions, setShowSuggestions] = useState(false);
       absolute
       left-0
       right-0
-      top-[92px]
+      top-[74px] sm:top-[92px]
       z-50
       overflow-hidden
       rounded-3xl
@@ -274,8 +282,7 @@ const [showSuggestions, setShowSuggestions] = useState(false);
           w-full
           border-b
           border-white/5
-          px-5
-          py-4
+          px-4 py-3 sm:px-5 sm:py-4
           text-left
           text-white
           transition
@@ -291,7 +298,7 @@ const [showSuggestions, setShowSuggestions] = useState(false);
       {/* Voice Wave */}
 
       {listening && (
-        <div className="mt-5 flex justify-center gap-1">
+        <div className="mt-5 flex justify-center gap-[3px] sm:gap-1">
           {[...Array(7)].map((_, i) => (
             <motion.div
               key={i}
@@ -319,7 +326,7 @@ const [showSuggestions, setShowSuggestions] = useState(false);
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="mt-5 text-center text-blue-300"
+          className="mt-4 text-center text-sm text-blue-300 sm:text-base"
         >
           🧠 Understanding your request...
         </motion.p>

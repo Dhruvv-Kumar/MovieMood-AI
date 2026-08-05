@@ -140,20 +140,20 @@ const MovieDetails = () => {
   return (
     <div className="min-h-screen bg-[#030712] text-white">
 
-      <div className="mx-auto max-w-7xl px-6 py-12">
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12">
 
         <button
           onClick={() => navigate(-1)}
-          className="mb-10 rounded-xl border border-blue-500/20 bg-[#08111F] px-5 py-3 transition hover:border-blue-500"
+          className="mb-8 rounded-xl border border-blue-500/20 bg-[#08111F] px-4 py-3 text-sm transition hover:border-blue-500 sm:mb-10 sm:px-5 sm:text-base"
         >
           ← Back
         </button>
 
-        <div className="grid gap-12 lg:grid-cols-[360px_1fr]">
+        <div className="grid gap-8 lg:grid-cols-[360px_1fr] lg:gap-12">
 
           {/* Sticky Poster */}
 
-          <div className="self-start lg:sticky lg:top-24">
+          <div className="mx-auto w-full max-w-[280px] self-start lg:sticky lg:top-24 lg:max-w-none">
 
             <motion.img
               initial={{
@@ -196,26 +196,26 @@ const MovieDetails = () => {
 
                         {/* Movie Title */}
 
-            <h1 className="text-5xl font-black tracking-tight">
+            <h1 className="text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">
               {title}
             </h1>
 
             {movie.tagline && (
-              <p className="mt-4 text-xl italic text-blue-400">
+              <p className="mt-3 text-base italic text-blue-400 sm:mt-4 sm:text-xl">
                 "{movie.tagline}"
               </p>
             )}
 
             {/* Rating Cards */}
 
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-8 grid grid-cols-2 gap-4 sm:mt-10 sm:gap-5 xl:grid-cols-4">
 
               <div className="rounded-3xl border border-yellow-500/20 bg-yellow-500/10 p-5">
                 <p className="text-sm text-yellow-300">
                   Rating
                 </p>
 
-                <h3 className="mt-2 text-3xl font-bold">
+                <h3 className="mt-2 text-xl font-bold sm:text-3xl">
                   ⭐ {movie.vote_average?.toFixed(1)}
                 </h3>
               </div>
@@ -225,7 +225,7 @@ const MovieDetails = () => {
                   Votes
                 </p>
 
-                <h3 className="mt-2 text-3xl font-bold">
+                <h3 className="mt-2 text-xl font-bold sm:text-3xl">
                   {movie.vote_count?.toLocaleString()}
                 </h3>
               </div>
@@ -235,7 +235,7 @@ const MovieDetails = () => {
                   Runtime
                 </p>
 
-                <h3 className="mt-2 text-3xl font-bold">
+                <h3 className="mt-2 text-xl font-bold sm:text-3xl">
                   {movie.runtime
                     ? `${Math.floor(movie.runtime / 60)}h ${
                         movie.runtime % 60
@@ -249,7 +249,7 @@ const MovieDetails = () => {
                   Release Date
                 </p>
 
-                <h3 className="mt-2 text-xl font-bold">
+                <h3 className="mt-2 text-base font-bold sm:text-xl">
                   {releaseDate || "-"}
                 </h3>
               </div>
@@ -258,17 +258,17 @@ const MovieDetails = () => {
 
             {/* Meta */}
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-2 sm:gap-3">
 
-              <span className="rounded-full border border-blue-500/20 bg-[#08111F] px-4 py-2">
+              <span className="rounded-full border border-blue-500/20 bg-[#08111F] px-3 py-2 text-sm sm:px-4">
                 🌍 {movie.original_language?.toUpperCase()}
               </span>
 
-              <span className="rounded-full border border-blue-500/20 bg-[#08111F] px-4 py-2">
+              <span className="rounded-full border border-blue-500/20 bg-[#08111F] px-3 py-2 text-sm sm:px-4">
                 📌 {movie.status}
               </span>
 
-              <span className="rounded-full border border-blue-500/20 bg-[#08111F] px-4 py-2">
+              <span className="rounded-full border border-blue-500/20 bg-[#08111F] px-3 py-2 text-sm sm:px-4">
                 🎬 {mediaType === "tv" ? "TV Show" : "Movie"}
               </span>
 
@@ -276,13 +276,13 @@ const MovieDetails = () => {
 
             {/* Genres */}
 
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-2 sm:mt-10 sm:gap-3">
 
               {movie.genres?.map((genre) => (
 
                 <span
                   key={genre.id}
-                  className="rounded-full bg-blue-600/20 px-5 py-2 text-sm text-blue-300"
+                  className="rounded-full bg-blue-600/20 px-3 py-2 text-xs text-blue-300 sm:px-5 sm:text-sm"
                 >
                   {genre.name}
                 </span>
@@ -295,11 +295,11 @@ const MovieDetails = () => {
 
             <section className="mt-12">
 
-              <h2 className="mb-5 text-3xl font-bold">
+              <h2 className="mb-4 text-2xl font-bold sm:mb-5 sm:text-3xl">
                 📖 Overview
               </h2>
 
-              <p className="max-w-4xl text-lg leading-9 text-slate-300">
+              <p className="max-w-4xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-9">
                 {movie.overview ||
                   "No overview available."}
               </p>
@@ -319,7 +319,7 @@ const MovieDetails = () => {
 
   <section className="mt-12">
 
-    <h2 className="mb-5 text-3xl font-bold">
+    <h2 className="mb-4 text-2xl font-bold sm:mb-5 sm:text-3xl">
       🎬 Director
     </h2>
 

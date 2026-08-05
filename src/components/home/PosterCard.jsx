@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const PosterCard = ({ poster }) => {
   return (
     <motion.div
-      className="absolute hidden lg:block"
+      className="absolute block"
       style={{
         top: poster.top,
         left: poster.left,
@@ -31,7 +31,7 @@ const PosterCard = ({ poster }) => {
         ease: "easeInOut",
       }}
       whileHover={{
-        scale: 1.50,
+        scale: 1.3,
         y: -10,
         rotate: "0deg",
         opacity: 50,
@@ -45,7 +45,24 @@ const PosterCard = ({ poster }) => {
           src={poster.image}
           alt={poster.title}
           draggable={false}
-          className="h-[220px] w-[150px] object-cover transition-transform duration-500 hover:scale-110 select-none"
+          className="
+h-[100px]
+w-[70px]
+object-cover
+select-none
+transition-transform
+duration-500
+hover:scale-110
+
+sm:h-[130px]
+sm:w-[90px]
+
+md:h-[170px]
+md:w-[115px]
+
+lg:h-[220px]
+lg:w-[150px]
+"
         />
       </div>
     </motion.div>

@@ -15,18 +15,18 @@ const TopRatedSection = () => {
 
   if (loading) {
     return (
-      <section className="px-6 py-28">
+      <section className="px-4 py-20 sm:px-6 sm:py-28">
         <div className="mx-auto max-w-7xl">
 
-          <h2 className="mb-10 text-4xl font-bold text-white">
+          <h2 className="mb-8 text-3xl font-bold text-white sm:mb-10 sm:text-4xl">
             ⭐ Top Rated Movies
           </h2>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
             {[...Array(8)].map((_, index) => (
               <div
                 key={index}
-                className="h-[430px] animate-pulse rounded-3xl bg-zinc-800"
+                className="h-[310px] animate-pulse rounded-3xl bg-zinc-800 sm:h-[360px] lg:h-[430px]"
               />
             ))}
           </div>
@@ -38,7 +38,7 @@ const TopRatedSection = () => {
 
   if (error) {
     return (
-      <section className="py-28 text-center">
+      <section className="px-4 py-20 text-center sm:py-28">
 
         <h2 className="text-2xl font-bold text-red-400">
           Couldn't load top rated movies.
@@ -53,7 +53,7 @@ const TopRatedSection = () => {
   }
 
   return (
-    <section className="relative px-6 py-28">
+    <section className="relative px-4 py-20 sm:px-6 sm:py-28">
 
       <div className="mx-auto max-w-7xl">
 
@@ -72,16 +72,16 @@ const TopRatedSection = () => {
           transition={{
             duration: 0.6,
           }}
-          className="mb-16 flex items-end justify-between"
+          className="mb-10 flex flex-col gap-6 sm:mb-16 sm:flex-row sm:items-end sm:justify-between"
         >
 
           <div>
 
-            <p className="mb-3 text-sm uppercase tracking-[0.35em] text-yellow-400">
+            <p className="mb-2 text-xs uppercase tracking-[0.25em] text-yellow-400 sm:mb-3 sm:text-sm sm:tracking-[0.35em]">
               IMDb
             </p>
 
-            <h2 className="text-5xl font-bold text-white">
+            <h2 className="text-3xl font-bold text-white sm:text-5xl">
               ⭐ Top Rated Movies
             </h2>
 
@@ -91,14 +91,14 @@ const TopRatedSection = () => {
             onClick={() =>
               navigate("/top-rated/movies")
             }
-            className="rounded-full border border-yellow-400/20 px-5 py-3 text-zinc-300 transition hover:border-yellow-400 hover:bg-yellow-400 hover:text-black"
+            className="w-fit rounded-full border border-yellow-400/20 px-5 py-3 text-sm text-zinc-300 transition hover:border-yellow-400 hover:bg-yellow-400 hover:text-black sm:text-base"
           >
             View All →
           </button>
 
         </motion.div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
 
           {movies
             .slice(0, 8)

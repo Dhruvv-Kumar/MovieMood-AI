@@ -1,16 +1,127 @@
-# React + Vite
+# 🎬 MovieMood AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MovieMood AI is an AI-powered movie recommendation web application that helps users discover movies and TV shows based on their mood, natural language prompts, genres, actors, and directors.
 
-Currently, two official plugins are available:
+🌐 **Live Demo**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+https://movie-mood-ai-five.vercel.app/
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# ✨ Features
 
-## Expanding the ESLint configuration
+- 🤖 AI-powered movie recommendations
+- 🎭 Mood-based movie discovery
+- 🎤 Voice search
+- 🔍 Smart search suggestions
+- 🕒 Recent searches
+- 🔥 Trending Movies
+- 📺 Trending TV Shows
+- ⭐ Top Rated Movies
+- ⭐ Top Rated TV Shows
+- 🎬 Detailed Movie Information
+- 👨‍🎤 Actor Details
+- 🎥 Director Details
+- ▶️ Official Movie Trailer
+- 📺 OTT Availability
+- ⭐ Ratings & Reviews
+- 🎞️ Cast Information
+- 📱 Fully Responsive Design
+- ⚡ Smooth Animations
+- 🌙 Modern Dark UI
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+# 🛠️ Tech Stack
+
+### Frontend
+
+- React.js
+- Vite
+- Tailwind CSS
+- Framer Motion
+- React Router DOM
+
+### APIs
+
+- TMDB API
+- Google Gemini API
+
+### Deployment
+
+- Vercel
+
+---
+
+# 🚀 Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/Dhruvv-Kumar/MovieMood-AI
+```
+
+Go to the project folder
+
+```bash
+cd movie-mood-ai
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Create a `.env` file
+
+```env
+VITE_TMDB_API_KEY=YOUR_TMDB_API_KEY
+VITE_GEMINI_API_KEY=YOUR_GEMINI_API_KEY
+```
+
+Run the development server
+
+```bash
+npm run dev
+```
+
+Build for production
+
+```bash
+npm run build
+```
+
+---
+
+# 📂 Project Structure
+
+```
+src
+├── api
+├── assets
+├── components
+├── data
+├── hooks
+├── pages
+├── services
+├── utils
+└── App.jsx
+```
+
+---
+
+# 📱 Responsive Design
+
+MovieMood AI is fully optimized for:
+
+- 💻 Desktop
+- 💼 Laptop
+- 📱 Mobile
+- 📟 Tablet
+
+---
+
+# 📄 License
+
+This project is created for learning, portfolio, and educational purposes.

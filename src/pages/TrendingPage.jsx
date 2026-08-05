@@ -21,23 +21,19 @@ const TrendingPage = ({ type = "movie" }) => {
 
         switch (type) {
           case "movie":
-            data =
-              await movieService.getTrendingMovies();
+            data = await movieService.getTrendingMovies();
             break;
 
           case "tv":
-            data =
-              await movieService.getTrendingTV();
+            data = await movieService.getTrendingTV();
             break;
 
           case "top-movie":
-            data =
-              await movieService.getTopRatedMovies();
+            data = await movieService.getTopRatedMovies();
             break;
 
           case "top-tv":
-            data =
-              await movieService.getTopRatedTV();
+            data = await movieService.getTopRatedTV();
             break;
 
           default:
@@ -58,12 +54,12 @@ const TrendingPage = ({ type = "movie" }) => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#020617] px-6 py-24">
+      <div className="min-h-screen bg-[#020617] px-4 py-10 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-7xl">
 
           <div className="mb-12 h-10 w-72 animate-pulse rounded bg-[#08111F]" />
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
             {[...Array(12)].map((_, i) => (
               <div
                 key={i}
@@ -97,18 +93,14 @@ const TrendingPage = ({ type = "movie" }) => {
   return (
     <div className="min-h-screen bg-[#020617] text-white">
 
-      <div className="mx-auto max-w-7xl px-6 py-24">
-
-        {/* Back */}
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-24">
 
         <button
           onClick={() => navigate(-1)}
-          className="mb-10 rounded-xl bg-[#08111F] px-6 py-3 transition hover:bg-blue-600"
+          className="mb-8 rounded-xl bg-[#08111F] px-5 py-3 text-sm transition hover:bg-blue-600 sm:mb-10 sm:px-6 sm:text-base"
         >
           ← Back
         </button>
-
-        {/* Heading */}
 
         <motion.h1
           initial={{
@@ -119,18 +111,16 @@ const TrendingPage = ({ type = "movie" }) => {
             opacity: 1,
             y: 0,
           }}
-          className="mb-16 text-5xl font-black"
+          className="mb-10 text-3xl font-black sm:mb-16 sm:text-4xl lg:text-5xl"
         >
           {heading}
         </motion.h1>
 
-        {/* Grid */}
-
         {items.length === 0 ? (
 
-          <div className="rounded-3xl bg-[#08111F] p-16 text-center">
+          <div className="rounded-3xl bg-[#08111F] p-8 text-center sm:p-16">
 
-            <h2 className="text-3xl font-bold">
+            <h2 className="text-2xl font-bold sm:text-3xl">
               No Content Found
             </h2>
 
@@ -144,7 +134,7 @@ const TrendingPage = ({ type = "movie" }) => {
 
         ) : (
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
 
             {items.map((item) => (
 

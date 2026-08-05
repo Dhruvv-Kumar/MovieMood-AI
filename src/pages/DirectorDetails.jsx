@@ -89,18 +89,18 @@ const DirectorDetails = () => {
     return (
     <div className="min-h-screen bg-[#020617] text-white">
 
-      <div className="mx-auto max-w-7xl px-6 py-16">
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-16">
 
         {/* Back Button */}
 
         <button
           onClick={() => navigate(-1)}
-          className="mb-10 rounded-xl bg-[#08111F] px-6 py-3 transition hover:bg-blue-600"
+          className="mb-8 rounded-xl bg-[#08111F] px-5 py-3 text-sm transition hover:bg-blue-600 sm:mb-10 sm:px-6 sm:text-base"
         >
           ← Back
         </button>
 
-        <div className="grid items-start gap-10 lg:grid-cols-[260px_1fr]">
+        <div className="grid items-start gap-8 lg:grid-cols-[260px_1fr] lg:gap-10">
 
           {/* Director Image */}
 
@@ -122,7 +122,7 @@ const DirectorDetails = () => {
                 : "https://placehold.co/500x750/111827/FFFFFF?text=No+Image"
             }
             alt={director.name}
-            className="h-[390px] w-[260px] rounded-3xl border border-blue-500/20 object-cover shadow-2xl lg:mx-0 mx-auto"
+            className="mx-auto h-[300px] w-[210px] rounded-3xl border border-blue-500/20 object-cover shadow-2xl sm:h-[360px] sm:w-[240px] lg:mx-0 lg:h-[390px] lg:w-[260px]"
           />
 
           {/* Details */}
@@ -141,22 +141,22 @@ const DirectorDetails = () => {
             }}
           >
 
-            <h1 className="text-5xl font-black">
+            <h1 className="text-3xl font-black sm:text-4xl lg:text-5xl">
               {director.name}
             </h1>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-2 sm:mt-8 sm:gap-3">
 
-              <span className="rounded-full bg-blue-600/20 px-4 py-2 text-blue-300">
+              <span className="rounded-full bg-blue-600/20 px-3 py-2 text-xs text-blue-300 sm:px-4 sm:text-sm">
                 ⭐ Popularity: {Math.round(director.popularity)}
               </span>
 
-              <span className="rounded-full bg-purple-600/20 px-4 py-2 text-purple-300">
+              <span className="rounded-full bg-purple-600/20 px-3 py-2 text-xs text-purple-300 sm:px-4 sm:text-sm">
                 🎬 Director
               </span>
 
               {director.birthday && (
-                <span className="rounded-full bg-green-600/20 px-4 py-2 text-green-300">
+                <span className="rounded-full bg-green-600/20 px-3 py-2 text-xs text-green-300 sm:px-4 sm:text-sm">
                   🎂 {director.birthday}
                 </span>
               )}
@@ -165,7 +165,7 @@ const DirectorDetails = () => {
 
             {director.place_of_birth && (
 
-              <p className="mt-8 text-lg text-slate-300">
+              <p className="mt-6 text-base text-slate-300 sm:mt-8 sm:text-lg">
                 📍 {director.place_of_birth}
               </p>
 
@@ -175,7 +175,7 @@ const DirectorDetails = () => {
 
               <div className="mt-8">
 
-                <h3 className="mb-3 text-xl font-bold">
+                <h3 className="mb-3 text-lg font-bold sm:text-xl">
                   Also Known As
                 </h3>
 
@@ -187,7 +187,7 @@ const DirectorDetails = () => {
 
                       <span
                         key={name}
-                        className="rounded-full bg-[#08111F] px-4 py-2 text-sm"
+                        className="rounded-full bg-[#08111F] px-3 py-2 text-xs sm:px-4 sm:text-sm"
                       >
                         {name}
                       </span>
@@ -204,11 +204,11 @@ const DirectorDetails = () => {
 
               <div className="mt-10">
 
-                <h2 className="mb-4 text-3xl font-bold">
+                <h2 className="mb-4 text-2xl font-bold sm:text-3xl">
                   Biography
                 </h2>
 
-                <p className="leading-8 text-slate-300">
+                <p className="text-sm leading-7 text-slate-300 sm:text-base sm:leading-8">
                   {director.biography}
                 </p>
 
@@ -223,7 +223,7 @@ const DirectorDetails = () => {
 
         <section className="mt-24">
 
-          <h2 className="mb-10 text-4xl font-bold">
+          <h2 className="mb-8 text-3xl font-bold sm:mb-10 sm:text-4xl">
             🎬 Best Movies Directed
           </h2>
 
@@ -235,7 +235,7 @@ const DirectorDetails = () => {
 
           ) : (
 
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
 
               {movies.slice(0, 12).map((movie) => (
 
@@ -256,7 +256,7 @@ const DirectorDetails = () => {
 
         <section className="mt-24">
 
-          <h2 className="mb-10 text-4xl font-bold">
+          <h2 className="mb-8 text-3xl font-bold sm:mb-10 sm:text-4xl">
             📺 TV Shows Directed
           </h2>
 
@@ -268,7 +268,7 @@ const DirectorDetails = () => {
 
           ) : (
 
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
 
               {tvShows.slice(0, 12).map((show) => (
 
